@@ -1,15 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OnePlayerInputReader : MonoBehaviour, Controls.I_1PlayerActions
+public class OnePlayerInputReader : AbstractInput, Controls.I_1PlayerActions
 {
-    public event Action<Vector2> On1Dir;
-    public event Action OnJPressed;
-    public event Action OnHPressed;
-    
-    private Controls _control;
-
     private void Awake()
     {
         _control = new Controls();
@@ -25,19 +18,19 @@ public class OnePlayerInputReader : MonoBehaviour, Controls.I_1PlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        On1Dir.Invoke(context.ReadValue<Vector2>());
+        MoveInvoke(context.ReadValue<Vector2>());
     }
 
     public void OnJ(InputAction.CallbackContext context)
     {
         if(context.performed)
-            OnJPressed?.Invoke();
+            AttackInvoke();
         
     }
 
     public void OnH(InputAction.CallbackContext context)
     {
         if(context.performed)
-            OnHPressed?.Invoke();
+            DashInvoke();
     }
 }
