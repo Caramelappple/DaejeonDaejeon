@@ -4,7 +4,6 @@
     {
          Block,
          Reflect,
-         Absorb,
-         PassThrough 
+         Absorb
     }
 }
