@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a72342e05946a79f9af219100df58e, type: 3}
+  m_Name: ReflectWall
+  m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.Wall.Data.SimpleWallData
+  wallName: "\uB3C4\uCCB4 \uBCBD"
+  description: "\uB808\uC774\uC800\uAC00 \uAC70\uC6B8\uCC98\uB7FC \uBC18\uC0AC\uB428.
+    \uBC45\uD06C\uC0F7 \uAC00\uB2A5"
+  tintColor: {r: 0, g: 0, b: 0, a: 0}
+  laserResponse: 1
