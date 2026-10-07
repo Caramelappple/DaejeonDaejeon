@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using _TYU.Scripts.Interface;
+using UnityEngine;
 
 namespace _TYU.Scripts.Player
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IMovable
     {
         
         private Rigidbody _rb;
@@ -24,7 +25,6 @@ namespace _TYU.Scripts.Player
         }
 
         #endregion
-
         #region Init
 
         private void GetComponents()
@@ -34,5 +34,10 @@ namespace _TYU.Scripts.Player
         }
 
         #endregion
+
+        public void Push(Vector2 dir, float pow, ForceMode forceMode)
+        {
+            
+        }
     }
 }
