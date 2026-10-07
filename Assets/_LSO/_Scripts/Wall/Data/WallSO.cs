@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace _LSO._Scripts.Wall.Data
 {
-   [CreateAssetMenu(fileName = "WallSO", menuName = "SO/Wall/WallSO, order = 1")]
    public abstract class WallSO : ScriptableObject
    {
       [Header("Wall")]
