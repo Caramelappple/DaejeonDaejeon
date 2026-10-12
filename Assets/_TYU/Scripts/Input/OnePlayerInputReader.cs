@@ -18,7 +18,8 @@ public class OnePlayerInputReader : AbstractInput, Controls.I_1PlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        MoveInvoke(context.ReadValue<Vector2>());
+        Vector3 dir = new Vector3(context.ReadValue<Vector2>().x, 0f, context.ReadValue<Vector2>().y);
+        MoveInvoke(dir);
     }
 
     public void OnJ(InputAction.CallbackContext context)

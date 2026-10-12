@@ -15,7 +15,7 @@ namespace _TYU.Scripts.Player
         
         
 
-        public void Push(Vector2 dir, float pow, ForceMode forceMode)
+        public void Push(Vector3 dir, float pow, ForceMode forceMode)
         {
             
         }
