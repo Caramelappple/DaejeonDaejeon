@@ -9,7 +9,7 @@ public abstract class AbstractInput : MonoBehaviour
     
     protected Controls _control;
 
-    protected void MoveInvoke(Vector2 dir) => OnMovePressed?.Invoke(dir);
+    protected void MoveInvoke(Vector3 dir) => OnMovePressed?.Invoke(dir);
     protected void AttackInvoke() => OnAttackPressed?.Invoke();
     protected void DashInvoke() => OnDashPressed?.Invoke();
 }
