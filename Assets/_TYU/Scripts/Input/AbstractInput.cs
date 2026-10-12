@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class AbstractInput : MonoBehaviour
 {
-    public event Action<Vector2> OnMovePressed;
+    public event Action<Vector3> OnMovePressed;
     public event Action OnAttackPressed;
     public event Action OnDashPressed;
     

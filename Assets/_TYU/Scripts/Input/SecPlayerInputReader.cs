@@ -20,7 +20,8 @@ namespace DefaultNamespace
         }
         public void OnMove(InputAction.CallbackContext context)
         {
-            MoveInvoke(context.ReadValue<Vector2>());
+            Vector3 dir = new Vector3(context.ReadValue<Vector2>().x, 0f, context.ReadValue<Vector2>().y);
+            MoveInvoke(dir);
         }
 
         public void OnNum7(InputAction.CallbackContext context)
