@@ -1,11 +1,12 @@
 ﻿using System;
+using _LSO._Scripts;
 using _TYU.Scripts.Interface;
 using _TYU.Scripts.Module;
 using UnityEngine;
 
 namespace _TYU.Scripts.Player
 {
-    public class Player : MonoBehaviour, IMovable, IDamageable
+    public class Player : MonoBehaviour, IMovable, IDamageable, IGaugeHavable
     {
         
         private Rigidbody _rb;
@@ -71,5 +72,13 @@ namespace _TYU.Scripts.Player
         }
 
         #endregion
+
+        public void DownGauge(int value)
+        {
+        }
+
+        public void UpGauge(int value)
+        {
+        }
     }
 }
