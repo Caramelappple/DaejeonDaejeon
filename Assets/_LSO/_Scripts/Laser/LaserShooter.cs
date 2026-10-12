@@ -11,6 +11,7 @@ namespace _LSO._Scripts.Laser
         public void Shoot()
         {
             var laser =  Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+            //laser.Init();
         }
     }
 }
