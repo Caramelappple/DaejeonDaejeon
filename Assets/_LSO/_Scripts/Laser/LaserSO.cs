@@ -12,7 +12,6 @@ namespace _LSO._Scripts.Laser
         public float maxSpeed = 40f;
         
         [Header("고정 값")]
-        public float range;
         public LayerMask layerMask;
     }
 }
