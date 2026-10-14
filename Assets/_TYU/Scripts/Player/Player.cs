@@ -1,6 +1,7 @@
 ﻿using System;
 using _LSO._Scripts;
 using _TYU.Scripts.Interface;
+using _TYU.Scripts.JeOngiJang;
 using _TYU.Scripts.Module;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace _TYU.Scripts.Player
         
         private Rigidbody _rb;
         [field:SerializeField] public PlayerType MyType { get; private set; }
+        [field:SerializeField] public ElectronicType ElectronicType { get; private set; }
         [SerializeField] private AbstractInput inputReader;
         [SerializeField] private HealthModule hpMd;
         [SerializeField] private MovementModule moveMd;
@@ -27,34 +29,29 @@ namespace _TYU.Scripts.Player
             EventDisSub();
         }
 
-        public void Push(Vector3 dir, float pow, ForceMode forceMode)
-        {
-            
-        }
 
         public void GetDamage(int damage) => hpMd.GetDamage(damage);
         
+        public void Push(Vector3 dir, float pow, ForceMode forceMode) => moveMd.Push(dir, pow, forceMode);
         #region EventSetting
 
         private void EventSub()
         {
             inputReader.OnMovePressed += SetMovementHandler;
+            inputReader.OnDashPressed += DashHandler;
         }
 
         private void EventDisSub()
         {
             inputReader.OnMovePressed -= SetMovementHandler;
+            inputReader.OnDashPressed -= DashHandler;
         }
 
         #endregion
-
         #region MethodHandler
 
-        private void SetMovementHandler(Vector3 dir)
-        {
-            moveMd.SetDir(dir);
-        }
-
+        private void SetMovementHandler(Vector3 dir) => moveMd.SetDir(dir);
+        private void DashHandler() => moveMd.Dash();
         #endregion
         #region Init
 
