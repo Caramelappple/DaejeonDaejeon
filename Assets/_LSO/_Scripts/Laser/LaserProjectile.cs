@@ -1,4 +1,5 @@
 ﻿using _LSO._Scripts.Laser.Data;
+using _LSO._Scripts.Wall.Data;
 using _TYU.Scripts.Player;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace _LSO._Scripts.Laser
 
         private Rigidbody _rigid;
         private LaserVisual _visual;
-        public LaserHitResolver hitResolver = new LaserHitResolver();
+        public LaserHitResolver hitResolver;
 
         private void Awake()
         {
@@ -48,8 +49,11 @@ namespace _LSO._Scripts.Laser
 
             Vector3 point = other.ClosestPoint(transform.position);
             Vector3 normal = (transform.position - point).normalized;
+            
+            WallSO wallSo = other.gameObject.GetComponent<Wall.Wall>().wallSO;
 
-            var ctx = new LaserHitContext(other, point, normal, _direction, _damage, _shooter);
+            var ctx = new LaserHitContext(other, point, normal, _direction, _damage, _shooter, wallSo);
+                
             HitResult result = hitResolver.Resolve(ctx);
             Apply(result, other);
         }

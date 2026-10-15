@@ -1,4 +1,5 @@
-﻿using _TYU.Scripts.Player;
+﻿using _LSO._Scripts.Wall.Data;
+using _TYU.Scripts.Player;
 using UnityEngine;
 
 public readonly struct LaserHitContext
@@ -9,8 +10,9 @@ public readonly struct LaserHitContext
     public readonly Vector3 direction;
     public readonly int damage;
     public readonly Player shooter;
+    public readonly WallSO wallSo;
 
-    public LaserHitContext(Collider other, Vector3 hitPoint, Vector3 normal, Vector3 direction, int damage, Player shooter)
+    public LaserHitContext(Collider other, Vector3 hitPoint, Vector3 normal, Vector3 direction, int damage, Player shooter, WallSO wallSo)
     {
         this.other = other;
         this.hitPoint = hitPoint;
@@ -18,5 +20,6 @@ public readonly struct LaserHitContext
         this.direction = direction;
         this.damage = damage;
         this.shooter = shooter;
+        this.wallSo = wallSo;
     }
 }
