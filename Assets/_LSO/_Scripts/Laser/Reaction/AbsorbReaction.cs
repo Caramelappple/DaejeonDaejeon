@@ -16,7 +16,6 @@ namespace _LSO._Scripts.Laser.Reaction
                 return new HitResult();
             }
             
-            ctx.shooter.Gauge.Down(wall.absorbValue);
             return HitResult.Destroy(ctx.hitPoint);
         }
     }

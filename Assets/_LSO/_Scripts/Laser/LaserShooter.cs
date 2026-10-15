@@ -46,7 +46,6 @@ namespace _LSO._Scripts.Laser
 
         public void Shoot()
         {
-            int downValue = _player.Gauge.Value;
             _percentage = _player.Gauge.Value;
             var laser =  Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
 
@@ -56,7 +55,7 @@ namespace _LSO._Scripts.Laser
             laser.Init(CurrentDamage, CurrentSpeed,laserData.layerMask, _player, _hitResolver);
             laser.Step(transform.right);
             
-            _player.Gauge.Down(downValue);
+            _player.Gauge.Clear();
         }
     }
 }
