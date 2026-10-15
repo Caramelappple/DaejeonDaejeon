@@ -7,14 +7,14 @@ using UnityEngine;
 
 namespace _TYU.Scripts.Player
 {
-    public class Player : MonoBehaviour, IMovable, IDamageable, IGaugeHavable
+    public class Player : MonoBehaviour, IMovable, IGaugeHavable
     {
         
         private Rigidbody _rb;
         [field:SerializeField] public PlayerType MyType { get; private set; }
         [field:SerializeField] public ElectronicType ElectronicType { get; private set; }
+        [field: SerializeField] public Health Health { get; private set; }
         [SerializeField] private AbstractInput inputReader;
-        [SerializeField] private HealthModule hpMd;
         [SerializeField] private MovementModule moveMd;
 
         private void Awake()
@@ -28,9 +28,7 @@ namespace _TYU.Scripts.Player
         {
             EventDisSub();
         }
-
-
-        public void GetDamage(int damage) => hpMd.GetDamage(damage);
+        
         
         public void Push(Vector3 dir, float pow, ForceMode forceMode) => moveMd.Push(dir, pow, forceMode);
         #region EventSetting
@@ -59,7 +57,7 @@ namespace _TYU.Scripts.Player
         {
             _rb = GetComponent<Rigidbody>();
             inputReader = GetComponentInChildren<AbstractInput>();
-            hpMd = GetComponentInChildren<HealthModule>();
+            Health = GetComponentInChildren<Health>();
             moveMd = GetComponentInChildren<MovementModule>();
         }
 
