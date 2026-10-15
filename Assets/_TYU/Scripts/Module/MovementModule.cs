@@ -8,8 +8,11 @@ namespace _TYU.Scripts.Module
     {
         [SerializeField] private float maxSpeed;
         [SerializeField] private float speed;
+        [SerializeField] private float dashPow;
         [SerializeField] private float stopSpeed;
+        [SerializeField] private float dashCool;
 
+        private float _dashCool;
         private Vector3 _curDir;
         private Rigidbody _rb;
 
@@ -20,7 +23,8 @@ namespace _TYU.Scripts.Module
 
         public void Push(Vector3 dir, float pow, ForceMode forceMode)
         {
-            
+            _rb.AddForce(dir * pow, forceMode);
+            ReverseForce();
         }
 
         public void SetDir(Vector3 dir)
@@ -38,6 +42,15 @@ namespace _TYU.Scripts.Module
             _rb.linearVelocity = movement;
         }
 
+        public void Dash()
+        {
+            if (_dashCool + dashCool < Time.time)
+            {
+                _rb.AddForce(_curDir * dashPow, ForceMode.Impulse);
+                _dashCool = Time.time;
+            }
+        }
+
         private void ReverseForce()
         {
             Vector3 dir = _curDir;
@@ -47,7 +60,7 @@ namespace _TYU.Scripts.Module
             }
             if (dir.y == 0)
             {
-                _rb.AddForce(Vector3.back * (stopSpeed*_rb.linearVelocity.z));
+                _rb.AddForce(Vector3.back * (stopSpeed * _rb.linearVelocity.z));
             }
         }
 
