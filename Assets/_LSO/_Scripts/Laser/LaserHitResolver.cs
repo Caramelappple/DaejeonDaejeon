@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _LSO._Scripts.Laser.Data;
 using _TYU.Scripts.Interface;
+using _TYU.Scripts.Player;
 
 namespace _LSO._Scripts.Laser
 {
@@ -22,11 +23,14 @@ namespace _LSO._Scripts.Laser
 
         public HitResult Resolve(in LaserHitContext ctx)
         {
-            if (ctx.other.gameObject.TryGetComponent(out IDamageable target))
+            if (ctx.other.gameObject.TryGetComponent(out Player _))
                 return _laserReaction.React(ctx);
 
             if (ctx.other.gameObject.TryGetComponent(out Wall.Wall wall))
+            {
                 return _wallReactions[wall.wallSO.laserResponse].React(ctx);
+            }
+               
 
             return HitResult.Destroy(ctx.hitPoint);
         }

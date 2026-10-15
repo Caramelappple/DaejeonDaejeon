@@ -12,7 +12,7 @@ namespace _LSO._Scripts.Laser.Reaction
             
             if (ctx.other.TryGetComponent<Health>(out var player))
             {
-                DamageData data = new DamageData(ctx.shooter, ctx.damage);
+                DamageData data = new DamageData(ctx.shooter.Health, ctx.damage);
                 player.GetDamage(data);
             }
             return HitResult.Destroy(ctx.hitPoint);
