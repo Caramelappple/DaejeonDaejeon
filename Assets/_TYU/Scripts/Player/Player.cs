@@ -7,13 +7,14 @@ using UnityEngine;
 
 namespace _TYU.Scripts.Player
 {
-    public class Player : MonoBehaviour, IMovable, IGaugeHavable
+    public class Player : MonoBehaviour, IMovable
     {
         
         private Rigidbody _rb;
         [field:SerializeField] public PlayerType MyType { get; private set; }
         [field:SerializeField] public ElectronicType ElectronicType { get; private set; }
         [field: SerializeField] public Health Health { get; private set; }
+        [field: SerializeField] public GaugeModule Gauge { get; private set; }
         [SerializeField] private AbstractInput inputReader;
         [SerializeField] private MovementModule moveMd;
 
@@ -59,6 +60,7 @@ namespace _TYU.Scripts.Player
             inputReader = GetComponentInChildren<AbstractInput>();
             Health = GetComponentInChildren<Health>();
             moveMd = GetComponentInChildren<MovementModule>();
+            Gauge = GetComponentInChildren<GaugeModule>();
         }
 
         private void InitialIze()
@@ -67,13 +69,5 @@ namespace _TYU.Scripts.Player
         }
 
         #endregion
-
-        public void DownGauge(int value)
-        {
-        }
-
-        public void UpGauge(int value)
-        {
-        }
     }
 }

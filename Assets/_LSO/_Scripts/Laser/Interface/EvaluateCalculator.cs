@@ -1,18 +1,17 @@
-﻿using UnityEngine;
-
-namespace _LSO._Scripts.Laser
+﻿namespace _LSO._Scripts.Laser.Interface
 {
     public class EvaluateCalculator : IEvaluate
     {
-        public float Evaluate(UpgradeStat[] data, float percentage, bool isInt)
+        public float Evaluate(UpgradeStat[] data, float percentage)
         {
             if (data.Length == 0)
                 return 0f;
-            foreach (var upgradeStat in data)
+            
+            
+            for (int i = data.Length - 1; i >= 0; i--)
             {
-                if (upgradeStat.percent <= percentage)
-                    return isInt ? Mathf.RoundToInt(upgradeStat.value)  : upgradeStat.value;
-                return 0f;
+                if ( (percentage >= data[i].percent))
+                    return data[i].value;
             }
             return 0f;
         }

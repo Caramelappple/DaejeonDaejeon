@@ -27,26 +27,4 @@ public class Health : DamageableResources, IRecoverable
 
 
     }
-    
-    //??? ??
-    [ContextMenu("Recover")]
-    public void Recover()
-    {
-        RecoverData data = RecoverData.Create(null, 1);
-        if (IsDestroyed) return;
-
-        int recoverValue = data.recoverValue;
-
-        int lastValue = Value;
-        Value += recoverValue;
-        int calcValue = Value;
-        bool hasRecover = lastValue < calcValue;
-
-        if (hasRecover)
-        {
-            RecoverResultData resultData = RecoverResultData.Create(data.giver, recoverValue, calcValue);
-            OnRecover?.Invoke(resultData);
-        }
-    }
-    
 }

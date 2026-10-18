@@ -2,6 +2,6 @@
 {
     public interface IEvaluate
     {
-        public float Evaluate(UpgradeStat[] data, float percentage, bool isInt);
+        public float Evaluate(UpgradeStat[] data, float percentage);
     }
 }

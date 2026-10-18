@@ -8,7 +8,6 @@ namespace _LSO._Scripts.Wall.Data
       [Header("Wall")]
       public string wallName;
       [TextArea(3,10)]public string description;
-      public Color tintColor;
 
       [Header("Laser")]
       public LaserResponse laserResponse = LaserResponse.Block;   

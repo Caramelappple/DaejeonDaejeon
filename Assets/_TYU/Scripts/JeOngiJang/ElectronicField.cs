@@ -59,11 +59,11 @@ namespace _TYU.Scripts.JeOngiJang
         {
             if (player.ElectronicType == myType)
             {
-                player.UpGauge(gauge);
+                player.Gauge.Up(gauge);
             }
             else
             {
-                player.DownGauge(gauge);
+                player.Gauge.Down(gauge);
             }
         }
     }

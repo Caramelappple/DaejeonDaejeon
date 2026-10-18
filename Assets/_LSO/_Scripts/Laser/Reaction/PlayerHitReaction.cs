@@ -7,13 +7,12 @@ namespace _LSO._Scripts.Laser.Reaction
     {
         public HitResult React(in LaserHitContext ctx)
         {
-            if (ctx.shooter.gameObject == ctx.other.gameObject)
-                return new HitResult();
-            
-            if (ctx.other.TryGetComponent<Health>(out var player))
+            if (ctx.other.TryGetComponent<Player>(out var player))
             {
+                var health = player.Health;
+                
                 DamageData data = new DamageData(ctx.shooter.Health, ctx.damage);
-                player.GetDamage(data);
+                health.GetDamage(data);
             }
             return HitResult.Destroy(ctx.hitPoint);
         }
