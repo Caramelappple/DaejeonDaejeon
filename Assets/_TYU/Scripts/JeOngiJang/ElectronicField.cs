@@ -65,6 +65,7 @@ namespace _TYU.Scripts.JeOngiJang
             {
                 player.Gauge.Down(gauge);
             }
+            Destroy(gameObject);
         }
     }
 
