@@ -17,6 +17,6 @@ MonoBehaviour:
     \uB2E4\uB978 \uADF9\uC131\uC740 \uB04C\uB824\uAC10. \uAC19\uC740 \uBCBD\uC774
     1P\uC640 2P\uC5D0\uAC8C \uBC18\uB300\uB85C \uC791\uC6A9"
   laserResponse: 0
-  type: 1
-  force: 20
+  type: 0
+  force: 10
   forceMode: 0
