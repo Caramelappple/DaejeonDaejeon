@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GaugeModule : MonoBehaviour
 {
-    [SerializeField] private int maxValue = 100;
+    public readonly int maxValue = 100;
     private float _value;
     public int Value => Mathf.FloorToInt(_value);
     public event Action<int> OnChanged;

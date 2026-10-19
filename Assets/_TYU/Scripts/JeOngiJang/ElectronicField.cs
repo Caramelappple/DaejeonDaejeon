@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using _LSO._Scripts;
-using _TYU.Scripts.Interface;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _TYU.Scripts.JeOngiJang
 {
