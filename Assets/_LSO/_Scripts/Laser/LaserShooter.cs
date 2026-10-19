@@ -47,6 +47,10 @@ namespace _LSO._Scripts.Laser
         public void Shoot()
         {
             _percentage = _player.Gauge.Value;
+            
+            //if (_percentage <= 0)
+            //  return;
+            
             var laser =  Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
 
             CurrentDamage = (int)_evaluate.Evaluate(data.damage, _percentage);

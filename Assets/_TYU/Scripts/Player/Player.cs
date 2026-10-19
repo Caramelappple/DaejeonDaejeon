@@ -63,7 +63,12 @@ namespace _TYU.Scripts.Player
         }
 
         private void DashHandler() => moveMd.Dash();
-        private void AttackHandler() => Shooter.Shoot();
+        private void AttackHandler()
+        {
+            Shooter.Shoot();
+            Debug.Log("공격");
+        }
+
         #endregion
         #region Init
 

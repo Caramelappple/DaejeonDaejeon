@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "\uAC19\uC740 \uADF9\uC131\uC758 \uD50C\uB808\uC774\uC5B4\uB294 \uBC00\uB824\uB098\uACE0,
     \uB2E4\uB978 \uADF9\uC131\uC740 \uB04C\uB824\uAC10. \uAC19\uC740 \uBCBD\uC774
     1P\uC640 2P\uC5D0\uAC8C \uBC18\uB300\uB85C \uC791\uC6A9"
-  tintColor: {r: 0, g: 0, b: 0, a: 0}
   laserResponse: 0
-  polarity: 0
-  force: 0
+  type: 1
+  force: 20
+  forceMode: 0

@@ -45,6 +45,7 @@ namespace _LSO._Scripts.Laser
 
         private void OnTriggerEnter(Collider other)
         {
+           
             if (!_hasReflected && _shooter != null && other.gameObject == _shooter.gameObject) return; // 발사 직후 겹침 방지
             if (other == _lastReflected) return; // 반사 직후 같은 벽 재충돌 방지
             if (((1 << other.gameObject.layer) & _layerMask) == 0) return; // 마스크 밖 레이어 무시
@@ -52,7 +53,6 @@ namespace _LSO._Scripts.Laser
             GetHitInfo(other, out Vector3 point, out Vector3 normal);
 
             WallSO wallSo = null;
-
             if (other.TryGetComponent<Wall.Wall>(out var wall))
                 wallSo = wall.wallSO;
 
@@ -88,11 +88,14 @@ namespace _LSO._Scripts.Laser
                 _lastReflected = other;
                 _direction = r.newDirection;
                 Step(_direction);
+                Debug.Log("1");
             }
-            else if (!r.reflect && _hasReflected)
+            else if (!r.reflect)
                 Destroy(gameObject);
             else
                 Destroy(gameObject);
+
+            Debug.Log("2");
         }
     }
 }
