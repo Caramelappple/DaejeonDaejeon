@@ -4,24 +4,33 @@ namespace _TYU.Scripts.JeOngiJang
 {
     public class ElectronicField : MonoBehaviour
     {
-    [SerializeField] private float electronicDistance;
     [SerializeField] private ContactFilter2D whatIsTarget;
     [SerializeField] private ElectronicType myType;
-    [SerializeField] private int gauge;
-    [SerializeField] private float pushPower;
     [SerializeField] private bool debug;
     [SerializeField] private int bufferSize = 5;
-
+    private float _electronicDistance;
+    private int _gauge;
+    private float _pushPower;
+    private bool _isReady;
     private Collider[] results;
 
-    private void Awake()
+    private void OnEnable()
     {
         results = new Collider[bufferSize];
     }
 
+    public void Init(ElectricSO data, ElectronicType type)
+    {
+        _electronicDistance = data.ElectronicDistance;
+        _gauge = data.Gauge;
+        _pushPower = data.PushPower;
+        myType = type;
+        _isReady = true;
+    }
+
     private void ElectricField()
     {
-        int cnt = Physics.OverlapSphereNonAlloc(transform.position, electronicDistance, results, whatIsTarget.layerMask);
+        int cnt = Physics.OverlapSphereNonAlloc(transform.position, _electronicDistance, results, whatIsTarget.layerMask);
         if (cnt < 1) return;
         
         foreach (var target in results)
@@ -34,11 +43,11 @@ namespace _TYU.Scripts.JeOngiJang
                 pushDir = pushDir.normalized;
                 if (player.ElectronicType == myType)
                 {
-                    player.Push(pushDir, pushPower, ForceMode.Force);
+                    player.Push(pushDir, _pushPower, ForceMode.Force);
                 }
                 else
                 {
-                    player.Push(-pushDir, pushPower, ForceMode.Force);
+                    player.Push(-pushDir, _pushPower, ForceMode.Force);
                 }
             }
         }
@@ -51,15 +60,16 @@ namespace _TYU.Scripts.JeOngiJang
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!_isReady) return;
         if (other.TryGetComponent(out Player.Player player))
         {
             if (player.ElectronicType == myType)
             {
-                player.Gauge.Up(gauge);
+                player.Gauge.Up(_gauge);
             }
             else
             {
-                player.Gauge.Down(gauge);
+                player.Gauge.Down(_gauge);
             }
             Destroy(gameObject);
         }
@@ -69,7 +79,7 @@ namespace _TYU.Scripts.JeOngiJang
     {
         if (!debug) return;
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, electronicDistance);
+        Gizmos.DrawWireSphere(transform.position, _electronicDistance);
     }
     }
 }

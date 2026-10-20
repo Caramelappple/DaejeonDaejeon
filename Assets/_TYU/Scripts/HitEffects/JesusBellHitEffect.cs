@@ -22,8 +22,9 @@ public class JesusBellHitEffect : AbstractHitEffect
 
     private IEnumerator Hitco()
     {
-        src.PlayOneShot(clp);
-        yield return new WaitForSeconds(0.4f);
+        src.clip = clp;
+        src.time = 0.4f;
+        src.Play();
         _image.sprite = imgs[Random.Range(0, imgs.Count)];
         _image.color = _color;
         _image.DOFade(0 ,time).SetEase(Ease.InExpo);
