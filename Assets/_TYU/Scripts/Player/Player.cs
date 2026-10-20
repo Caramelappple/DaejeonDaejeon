@@ -18,6 +18,7 @@ namespace _TYU.Scripts.Player
         [field:SerializeField] public ElectronicType ElectronicType { get; private set; }
         [field: SerializeField] public Health Health { get; private set; }
         [field: SerializeField] public GaugeModule Gauge { get; private set; }
+        [field: SerializeField] public YameAnim anim { get; private set; }
         [SerializeField] private AbstractInput inputReader;
         [SerializeField] private MovementModule moveMd;
         private Transform _laserShooterTrm;
@@ -67,6 +68,7 @@ namespace _TYU.Scripts.Player
         {
             moveMd.SetDir(dir);
             if (dir == Vector3.zero) return;
+            anim.SetDir(dir);
             float rotation = Mathf.Atan2(-dir.z, dir.x) * Mathf.Rad2Deg;
             _laserShooterTrm.rotation = Quaternion.Euler(0f, rotation, 0f);
         }
@@ -90,6 +92,7 @@ namespace _TYU.Scripts.Player
             Gauge = GetComponentInChildren<GaugeModule>();
             Shooter = GetComponentInChildren<LaserShooter>();
             _laserShooterTrm = Shooter.transform;
+            anim.Init(transform);
         }
 
         private void InitialIze()
