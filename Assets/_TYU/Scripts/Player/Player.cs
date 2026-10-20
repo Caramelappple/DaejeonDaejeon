@@ -1,6 +1,7 @@
 ﻿using System;
 using _LSO._Scripts;
 using _LSO._Scripts.Laser;
+using _TYU.Scripts.HitEffects;
 using _TYU.Scripts.Interface;
 using _TYU.Scripts.JeOngiJang;
 using _TYU.Scripts.Module;
@@ -42,7 +43,15 @@ namespace _TYU.Scripts.Player
             inputReader.OnMovePressed += SetMovementHandler;
             inputReader.OnDashPressed += DashHandler;
             inputReader.OnAttackPressed += AttackHandler;
+            Health.OnDamage += HitEffect;
         }
+
+        private void HitEffect(DamageResultData data)
+        {
+            if(HitCaller.Instance != null)
+                HitCaller.Instance.Hit();
+        }
+
 
         private void EventDisSub()
         {
