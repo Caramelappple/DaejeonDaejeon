@@ -1,21 +1,26 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using _TYU.Scripts.HitEffects;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace _TYU.Scripts
 {
-    public class SkullEffect : MonoBehaviour
+    public class SkullEffect : AbstractHitEffect
     {
         public static SkullEffect Instance { get; private set; }
+        [SerializeField] private List<Sprite> sprites;
         [SerializeField] private float time;
         [SerializeField] private Image skull;
         [SerializeField] private Volume volume;
         [SerializeField] private AudioClip clip;
         [SerializeField] private AudioSource audio;
+        [SerializeField] private Vector2 shake;
         private ColorAdjustments colr;
 
         private bool _isOn;
@@ -31,32 +36,27 @@ namespace _TYU.Scripts
             if(volume == null) Debug.LogError("볼륨 넣어 병신아");
             volume.profile.TryGet(out colr);
         }
-
-        public void HitEffect()
-        {
-            if (_isOn) return;
-            StartCoroutine(HitEffectCo());
-        }
-
+        public override void StartHitEffect() =>  StartCoroutine(HitEffectCo());
         private IEnumerator HitEffectCo()
         {
-            _isOn = true;
+            skull.sprite = sprites[Random.Range(0, sprites.Count)];
+            skull.rectTransform.localScale = new Vector3(0.5f, 0.5f, 1f);
             skull.color = new Color(1,1,1,1);
             audio.PlayOneShot(clip);
             Time.timeScale = 0;
             colr.saturation.value = -100;
+            DOTween.Sequence().
+                Append(skull.rectTransform.DOShakeAnchorPos(time-0.8f,shake,1250 ,0).SetEase(Ease.OutQuad))
+                .Join(skull.rectTransform.DOScale(Vector3.one, time-0.8f).SetEase(Ease.OutQuad)).SetUpdate(true);
             yield return new WaitForSecondsRealtime(time);
             Time.timeScale = 1f;
             colr.saturation.value = 0;
             skull.color = new Color(1,1,1,0);
-            _isOn = false;
+            HitCaller.Instance.EndEffect();
+            
         }
 
 
-        private void OnDestroy()
-        {
-            if (Instance == this)
-                Instance = null;
-        }
+        
     }
 }
