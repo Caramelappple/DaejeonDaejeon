@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &262775698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8158355040948761031, guid: cf8903ca6edceaf4096fef6df11dcaca, type: 3}
+  m_PrefabInstance: {fileID: 3255488918592268614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &367984274
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,8 +616,80 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222646154}
   serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -914.9129, y: 453.1023, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1653388330}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1434992030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434992033}
+  - component: {fileID: 1434992032}
+  - component: {fileID: 1434992031}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1434992031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434992030}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 28.94, y: 1, z: 25.04}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1434992032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434992030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1403279ace2645da93dbee062c9fd5c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TYU.Scripts.JeOngiJang.KashimoHajime
+  dataList:
+  - {fileID: 11400000, guid: 7cd4386844ca7534ebbe5b9b1e3a6c24, type: 2}
+  prefab: {fileID: 262775698}
+  firstSpawn: 5
+  reSpawn: 2
+  coolTime: 5
+--- !u!4 &1434992033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434992030}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.08711, y: 993.1023, z: 0}
+  m_LocalPosition: {x: -0.64137, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -631,7 +708,7 @@ GameObject:
   - component: {fileID: 1653388328}
   - component: {fileID: 1653388327}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HitCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,6 +791,7 @@ RectTransform:
   m_Children:
   - {fileID: 917353229}
   - {fileID: 1216242582}
+  - {fileID: 1222646156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -948,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JesusEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 6794505651663000278, guid: 7a017217439fe86498ac415e744a3e18, type: 3}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7979800951667406819, guid: 7a017217439fe86498ac415e744a3e18, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1044,4 +1126,4 @@ SceneRoots:
   - {fileID: 1653388330}
   - {fileID: 734816019}
   - {fileID: 418842651}
-  - {fileID: 1222646156}
+  - {fileID: 1434992033}
