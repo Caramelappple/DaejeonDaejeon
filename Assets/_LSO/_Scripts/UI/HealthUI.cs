@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace _LSO._Scripts.UI
@@ -18,6 +17,8 @@ namespace _LSO._Scripts.UI
         private void OnEnable()
         {
             health.OnDamage +=  Apply;
+            DamageResultData dummyData = new DamageResultData(null, 0, health.Value);
+            Apply(dummyData);
         }
 
         private void OnDisable()

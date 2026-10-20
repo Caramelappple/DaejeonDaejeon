@@ -287,7 +287,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -395,6 +396,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &82709606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1289289251630609844, guid: 122aed751d59cb946a352a15f8779d39, type: 3}
+  m_PrefabInstance: {fileID: 392718848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e8df4056084c78afb56d61aa4bd488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!4 &111523256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2383861832134268110, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -498,7 +510,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -583,10 +596,22 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
+--- !u!114 &127891039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1289289251630609844, guid: 122aed751d59cb946a352a15f8779d39, type: 3}
+  m_PrefabInstance: {fileID: 1784118428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e8df4056084c78afb56d61aa4bd488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!1001 &137187337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -796,7 +821,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -1179,7 +1205,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -1572,7 +1599,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -1770,7 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bff8f4c9b8b40cfbd18d9afb8202720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.UI.GaugeUI
-  gaugeModule: {fileID: 0}
+  gaugeModule: {fileID: 1940996237}
 --- !u!1001 &498565469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,7 +1880,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -2215,7 +2244,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -2481,7 +2511,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -2939,7 +2970,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -3302,7 +3334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe57d3fbd82e48549dfb58771643d017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.UI.HealthUI
-  health: {fileID: 0}
+  health: {fileID: 82709606}
 --- !u!4 &970654309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2383861832134268110, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -3652,7 +3684,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -3968,7 +4001,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -4068,7 +4102,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -4153,7 +4188,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -4474,7 +4510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bff8f4c9b8b40cfbd18d9afb8202720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.UI.GaugeUI
-  gaugeModule: {fileID: 0}
+  gaugeModule: {fileID: 1765575074}
 --- !u!1001 &1261339611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4713,7 +4749,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -4965,7 +5002,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -5166,7 +5204,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -5341,7 +5380,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -6406,7 +6446,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -6486,6 +6527,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2383861832134268110, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
   m_PrefabInstance: {fileID: 1012104203}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765575074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2630752641134206842, guid: 122aed751d59cb946a352a15f8779d39, type: 3}
+  m_PrefabInstance: {fileID: 1784118428}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736307c53b5541a98bf543b5755a41a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GaugeModule
 --- !u!1 &1778295889
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,12 +7072,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe57d3fbd82e48549dfb58771643d017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.UI.HealthUI
-  health: {fileID: 0}
+  health: {fileID: 127891039}
 --- !u!4 &1887878559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2383861832134268110, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
   m_PrefabInstance: {fileID: 786151483}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1940996237 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2630752641134206842, guid: 122aed751d59cb946a352a15f8779d39, type: 3}
+  m_PrefabInstance: {fileID: 392718848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736307c53b5541a98bf543b5755a41a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GaugeModule
 --- !u!4 &1958592855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2383861832134268110, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
@@ -7320,7 +7383,8 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5057350170089045737, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb9317605b24134e925f6503de11bf6, type: 3}

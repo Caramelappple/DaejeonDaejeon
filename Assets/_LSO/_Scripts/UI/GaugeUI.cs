@@ -18,12 +18,15 @@ namespace _LSO._Scripts.UI
         private void OnEnable()
         {
             gaugeModule.OnChanged += Apply;
+            Apply(gaugeModule.Value);
         }
 
         private void OnDisable()
         {
             gaugeModule.OnChanged -= Apply;
         }
+        
+        
 
         private void Apply(int value)
         {
