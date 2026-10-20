@@ -6,12 +6,13 @@ namespace _TYU.Scripts.Player
 {
     public class YameAnim : MonoBehaviour
     {
-        private static readonly int Dir = Animator.StringToHash("Dir");
+        private static readonly int VeloY = Animator.StringToHash("velY");
+        private static readonly int VelX = Animator.StringToHash("velX");
         private Transform _trm;
         private Image _img;
         private SpriteRenderer _sr;
         private Animator _anim;
-        private Camera _worldCamera;
+        private Camera _mainCamera;
         private Canvas _canvas;
 
         private void Awake()
@@ -20,7 +21,7 @@ namespace _TYU.Scripts.Player
             _img = GetComponent<Image>();
             _sr = GetComponent<SpriteRenderer>();
             _anim = GetComponent<Animator>();
-            _worldCamera = Camera.main;
+            _mainCamera = Camera.main;
         }
 
         public void Init(Transform trm)
@@ -31,14 +32,23 @@ namespace _TYU.Scripts.Player
         private void LateUpdate()
         {
             if (_trm == null) return;
-            transform.position = new Vector3(_trm.position.x, transform.position.y, _trm.position.z);
+            Vector3 pos = _mainCamera.WorldToScreenPoint(_trm.position);
+            RectTransform canvasRTrm = _canvas.transform as RectTransform;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvasRTrm,
+                pos,
+                null,
+                out Vector2 canvasPos
+            );
+            
+            transform.position = canvasPos + canvasRTrm.sizeDelta/2;
             _img.sprite = _sr.sprite;
         }
 
         public void SetDir(Vector3 dir)
         {
-            var input = new Vector2(dir.x, dir.y);
-            _anim.SetFloat(Dir, input.magnitude);
+            _anim.SetFloat(VeloY, dir.z);
+            _anim.SetFloat(VelX, dir.x);
         }
         
         
