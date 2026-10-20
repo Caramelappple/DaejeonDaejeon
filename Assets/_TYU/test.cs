@@ -1,5 +1,6 @@
 ﻿using System;
 using _TYU.Scripts;
+using _TYU.Scripts.HitEffects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ namespace _TYU
         private void Update()
         {
             if (Keyboard.current.cKey.wasPressedThisFrame)
-                SkullEffect.Instance.HitEffect();
+                HitCaller.Instance.Hit();
         }
     }
 }
