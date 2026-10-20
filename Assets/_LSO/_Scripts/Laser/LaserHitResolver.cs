@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using _LSO._Scripts.Laser.Data;
 using _TYU.Scripts.Player;
+using UnityEngine;
 
 namespace _LSO._Scripts.Laser
 {
@@ -19,9 +20,10 @@ namespace _LSO._Scripts.Laser
             _wallReactions = wallReactions;
             _laserReaction = playerReaction;
         }
-
+    
         public HitResult Resolve(in LaserHitContext ctx)
         {
+            Debug.Log("맞음2" + ctx.other.gameObject.name);
             if (ctx.other.gameObject.TryGetComponent(out Player _))
                 return _laserReaction.React(ctx);
             

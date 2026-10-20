@@ -94,8 +94,6 @@ namespace _LSO._Scripts.Laser
                 Destroy(gameObject);
             else
                 Destroy(gameObject);
-
-            Debug.Log("2");
         }
     }
 }

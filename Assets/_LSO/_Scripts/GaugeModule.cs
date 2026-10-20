@@ -21,4 +21,19 @@ public class GaugeModule : MonoBehaviour
         _value = clamped;
         if (Value != before) OnChanged?.Invoke(Value);   // 표시값이 바뀔 때만 UI 갱신
     }
+
+    private void OnEnable()
+    {
+        OnChanged += Test;
+    }
+
+    private void OnDisable()
+    {
+        OnChanged -= Test;
+    }
+
+    private void Test(int value)
+    {
+        Debug.Log("게이지: "+ value);
+    }
 }
