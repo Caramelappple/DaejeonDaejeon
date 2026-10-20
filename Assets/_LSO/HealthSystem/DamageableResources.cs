@@ -15,6 +15,8 @@ public class DamageableResources : MonoBehaviour
         set
         {
             _value = Mathf.Clamp(value, 0, MaxValue);
+            if (IsDestroyed)
+                OnDead?.Invoke(gameObject);
         }
     }
     public bool IsDestroyed
@@ -24,6 +26,8 @@ public class DamageableResources : MonoBehaviour
             return _value <= 0;
         }
     }
+
+    public event Action<GameObject> OnDead;
 
     public bool IsDamageable { get; private set; } = true;
     

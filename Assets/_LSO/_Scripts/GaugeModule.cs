@@ -31,9 +31,15 @@ public class GaugeModule : MonoBehaviour
     {
         OnChanged -= Test;
     }
-
+    
     private void Test(int value)
     {
         Debug.Log("게이지: "+ value);
+    }
+    
+    [ContextMenu("10Up")]
+    private void Test2()
+    {
+        Up(10);
     }
 }

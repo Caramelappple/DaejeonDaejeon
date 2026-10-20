@@ -14,7 +14,6 @@ namespace _LSO._Scripts.Wall
         // 접촉하면 접지 벽 방전
         private void OnCollisionStay(Collision c)
         {
-            Debug.Log("OnCollisionStay");
             if (wallSO is not GroundWallData g) return;
             var player = c.collider.GetComponent<Player>();
             if (player == null) return;
