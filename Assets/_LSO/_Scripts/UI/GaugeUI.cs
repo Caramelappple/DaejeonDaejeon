@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace _LSO._Scripts.UI
@@ -8,6 +9,11 @@ namespace _LSO._Scripts.UI
         private Slider _slider;
         private int MaxValue => gaugeModule.maxValue;
         public GaugeModule gaugeModule;
+
+        private void Awake()
+        {
+            _slider = GetComponent<Slider>();
+        }
 
         private void OnEnable()
         {
