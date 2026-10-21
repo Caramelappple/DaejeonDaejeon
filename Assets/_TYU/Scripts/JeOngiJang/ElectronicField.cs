@@ -8,6 +8,9 @@ namespace _TYU.Scripts.JeOngiJang
     [SerializeField] private ElectronicType myType;
     [SerializeField] private bool debug;
     [SerializeField] private int bufferSize = 5;
+    [SerializeField] private RuntimeAnimatorController minus;
+    [SerializeField] private RuntimeAnimatorController plus;
+    private Animator _anim;
     private float _electronicDistance;
     private int _gauge;
     private float _pushPower;
@@ -16,6 +19,7 @@ namespace _TYU.Scripts.JeOngiJang
 
     private void OnEnable()
     {
+        _anim = GetComponent<Animator>();
         results = new Collider[bufferSize];
     }
 
@@ -25,6 +29,10 @@ namespace _TYU.Scripts.JeOngiJang
         _gauge = data.Gauge;
         _pushPower = data.PushPower;
         myType = type;
+        if (type == ElectronicType.Negative)
+            _anim.runtimeAnimatorController = minus;
+        else
+            _anim.runtimeAnimatorController = plus;
         _isReady = true;
     }
 
