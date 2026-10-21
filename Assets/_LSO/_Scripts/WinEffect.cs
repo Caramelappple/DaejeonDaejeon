@@ -44,7 +44,7 @@ namespace _LSO._Scripts
         {
             foreach (var player in players)
             {
-                player.GetComponentInChildren<Health>().OnDead -= PlayWin;
+               // player.GetComponentInChildren<Health>().OnDead -= PlayWin;
             }
         }
 

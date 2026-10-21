@@ -1,4 +1,6 @@
-﻿using DevLib.ServiceLocator;
+﻿using System;
+using _LSO._Scripts.Wall;
+using DevLib.ServiceLocator;
 using DevLib.SoundSystem.Runtime;
 using UnityEngine;
 
@@ -18,12 +20,18 @@ namespace _TYU.Scripts.JeOngiJang
     private int _gauge;
     private float _pushPower;
     private bool _isReady;
+    private SphereCollider _collider;
     private Collider[] results;
 
     private void OnEnable()
     {
         _anim = GetComponent<Animator>();
         results = new Collider[bufferSize];
+    }
+
+    private void Awake()
+    {
+        _collider = GetComponent<SphereCollider>();
     }
 
     public void Init(ElectricSO data, ElectronicType type)
@@ -66,6 +74,7 @@ namespace _TYU.Scripts.JeOngiJang
 
     private void FixedUpdate()
     {
+        IsWall();
         ElectricField();
     }
 
@@ -93,6 +102,19 @@ namespace _TYU.Scripts.JeOngiJang
         if (!debug) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, _electronicDistance);
+    }
+
+    private void IsWall()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _collider.radius);
+        if (colliders.Length > 0)
+        {
+            foreach (var target in colliders)
+            {
+                if (target.TryGetComponent(out Wall wall) || target.CompareTag("Wall"))
+                    Destroy(gameObject);
+            }
+        }
     }
     }
 }
