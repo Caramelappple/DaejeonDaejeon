@@ -7,7 +7,7 @@ namespace _LSO._Scripts.UI
     {
         private Slider _slider;
         private int MaxValue => health.MaxValue;
-        public Health health;
+        [SerializeField]private Health health;
 
         private void Awake()
         {
@@ -17,8 +17,6 @@ namespace _LSO._Scripts.UI
         private void OnEnable()
         {
             health.OnDamage +=  Apply;
-            DamageResultData dummyData = new DamageResultData(null, 0, health.Value);
-            Apply(dummyData);
         }
 
         private void OnDisable()
