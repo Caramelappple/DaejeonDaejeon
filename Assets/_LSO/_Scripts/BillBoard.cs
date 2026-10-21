@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 public class BillBoard : MonoBehaviour
 {
    [SerializeField] private Camera billCam;
+
+   private void OnValidate()
+   {
+      billCam = Camera.main;
+   }
 
    private void Update()
    {

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: test
   m_EditorClassIdentifier: Assembly-CSharp::_TYU.Scripts.JeOngiJang.ElectricSO
   <ElectronicDistance>k__BackingField: 5
-  <Gauge>k__BackingField: 12
+  <Gauge>k__BackingField: 10
   <PushPower>k__BackingField: 5
