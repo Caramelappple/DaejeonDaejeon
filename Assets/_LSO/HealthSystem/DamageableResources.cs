@@ -74,7 +74,8 @@ public class DamageableResources : MonoBehaviour
         if (hasDamage)
         {
             DamageResultData resultData = DamageResultData.Create(giver, damage, Value);
-            OnDamage?.Invoke(resultData);
+            if(Value > 0)
+                OnDamage?.Invoke(resultData);
         }
     }
 }
