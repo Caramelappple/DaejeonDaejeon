@@ -18,7 +18,7 @@ namespace _TYU.Scripts
         [SerializeField] private float time;
         [SerializeField] private Image skull;
         [SerializeField] private Volume volume;
-        [SerializeField] private AudioClip clip;
+        [SerializeField] private List<AudioClip> clip;
         [SerializeField] private AudioSource audio;
         [SerializeField] private Vector2 shake;
         private ColorAdjustments colr;
@@ -36,27 +36,31 @@ namespace _TYU.Scripts
             if(volume == null) Debug.LogError("볼륨 넣어 병신아");
             volume.profile.TryGet(out colr);
         }
-        public override void StartHitEffect() =>  StartCoroutine(HitEffectCo());
-        private IEnumerator HitEffectCo()
+
+        public override void StartHitEffect()
         {
+            _isOn = true;
             skull.sprite = sprites[Random.Range(0, sprites.Count)];
             skull.rectTransform.localScale = new Vector3(0.5f, 0.5f, 1f);
             skull.color = new Color(1,1,1,1);
-            audio.PlayOneShot(clip);
+            audio.PlayOneShot(clip[Random.Range(0,clip.Count)]);
             Time.timeScale = 0;
             colr.saturation.value = -100;
             DOTween.Sequence().
                 Append(skull.rectTransform.DOShakeAnchorPos(time-0.8f,shake,1250 ,0).SetEase(Ease.OutQuad))
                 .Join(skull.rectTransform.DOScale(Vector3.one, time-0.8f).SetEase(Ease.OutQuad)).SetUpdate(true);
-            yield return new WaitForSecondsRealtime(time);
-            Time.timeScale = 1f;
-            colr.saturation.value = 0;
-            skull.color = new Color(1,1,1,0);
-            HitCaller.Instance.EndEffect();
-            
+                
         }
-
-
-        
+        private void Update()
+        {
+            if (_isOn && !audio.isPlaying)
+            {
+                _isOn = false;
+                Time.timeScale = 1f;
+                colr.saturation.value = 0;
+                skull.color = new Color(1,1,1,0);
+                HitCaller.Instance.EndEffect();
+            }
+        }
     }
 }
