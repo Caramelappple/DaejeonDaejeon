@@ -20,15 +20,17 @@ MonoBehaviour:
   - percent: 40
     value: 40
   - percent: 60
-    value: 45
-  - percent: 100
     value: 50
+  - percent: 100
+    value: 60
   damage:
   - percent: 0
     value: 10
   - percent: 20
-    value: 15
+    value: 22
+  - percent: 40
+    value: 50
   - percent: 60
-    value: 20
-  - percent: 80
-    value: 30
+    value: 70
+  - percent: 100
+    value: 100
