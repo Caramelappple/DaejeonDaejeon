@@ -3,6 +3,8 @@ using _LSO._Scripts.Laser.Data;
 using _LSO._Scripts.Laser.Interface;
 using _LSO._Scripts.Laser.Reaction;
 using _TYU.Scripts.Player;
+using DevLib.ServiceLocator;
+using DevLib.SoundSystem.Runtime;
 using UnityEngine;
 
 namespace _LSO._Scripts.Laser
@@ -13,6 +15,7 @@ namespace _LSO._Scripts.Laser
         [SerializeField] private LaserProjectile laserPrefab;
         [SerializeField] private LaserSO laserData;
         [SerializeField] private EvaluateData data;
+        [SerializeField] private SoundClipSO soundClip;
         
         private LaserHitResolver _hitResolver;
         private readonly PlayerHitReaction _playerReaction = new();
@@ -47,6 +50,7 @@ namespace _LSO._Scripts.Laser
         public void Shoot()
         {
             _percentage = _player.Gauge.Value;
+            ServiceLocator.Get<IAudioService>()?.PlaySfx(soundClip);
             
             if (_percentage <= 0)
               return;

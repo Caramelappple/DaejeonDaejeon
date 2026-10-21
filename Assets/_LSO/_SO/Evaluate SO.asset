@@ -14,7 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_LSO._Scripts.Laser.EvaluateData
   speed:
   - percent: 0
-    value: 10
+    value: 20
+  - percent: 20
+    value: 30
+  - percent: 40
+    value: 40
+  - percent: 60
+    value: 45
+  - percent: 100
+    value: 50
   damage:
   - percent: 0
-    value: 1
+    value: 10
+  - percent: 20
+    value: 15
+  - percent: 60
+    value: 20
+  - percent: 80
+    value: 30
