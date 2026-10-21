@@ -50,10 +50,12 @@ namespace _LSO._Scripts.Laser
         public void Shoot()
         {
             _percentage = _player.Gauge.Value;
-            ServiceLocator.Get<IAudioService>()?.PlaySfx(soundClip);
+           
             
             if (_percentage <= 0)
               return;
+            
+            ServiceLocator.Get<IAudioService>()?.PlaySfx(soundClip);
             
             var laser =  Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
 

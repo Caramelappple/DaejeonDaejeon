@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using _LSO._Scripts;
 using _TYU.Scripts.HitEffects;
 using DG.Tweening;
 using UnityEngine;
@@ -44,11 +45,12 @@ namespace _TYU.Scripts
             skull.rectTransform.localScale = new Vector3(0.5f, 0.5f, 1f);
             skull.color = new Color(1,1,1,1);
             audio.PlayOneShot(clip[Random.Range(0,clip.Count)]);
+            YameMusicPlayer.Instance.Stop();
             Time.timeScale = 0;
             colr.saturation.value = -100;
             DOTween.Sequence().
                 Append(skull.rectTransform.DOShakeAnchorPos(time-0.8f,shake,1250 ,0).SetEase(Ease.OutQuad))
-                .Join(skull.rectTransform.DOScale(Vector3.one, time-0.8f).SetEase(Ease.OutQuad)).SetUpdate(true);
+                .Join(skull.rectTransform.DOScale(Vector3.one, time-0.8f).SetEase(Ease.OutQuad)).SetUpdate(true).OnComplete( () => YameMusicPlayer.Instance.Play() );
                 
         }
         private void Update()

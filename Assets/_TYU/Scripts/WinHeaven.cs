@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _LSO._Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -34,6 +35,7 @@ namespace _TYU.Scripts
         private IEnumerator WinCo()
         {
             _player.Play();
+            YameMusicPlayer.Instance.Stop();
             yield return new WaitForSecondsRealtime(3);
             _isOn = true;
         }

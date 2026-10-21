@@ -25,5 +25,10 @@ namespace _LSO._Scripts
         {
             ServiceLocator.Get<IAudioService>()?.StopBgm();
         }
+        
+        public void Play()
+        {
+            ServiceLocator.Get<IAudioService>()?.PlayBgm(soundClip);
+        }
     }
 }
