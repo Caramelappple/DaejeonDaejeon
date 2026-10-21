@@ -33,6 +33,7 @@ namespace _TYU.Scripts.Player
         private void OnDestroy()
         {
             EventDisSub();
+            Destroy(anim.gameObject);
         }
         
         

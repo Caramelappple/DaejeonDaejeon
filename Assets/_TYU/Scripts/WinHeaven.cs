@@ -11,7 +11,7 @@ namespace _TYU.Scripts
     {
         private VideoPlayer _player;
         private bool _isOn;
-        public WinHeaven Instance { get; private set; }
+        public static WinHeaven Instance { get; private set; }
         
         private void Awake()
         {
@@ -20,6 +20,8 @@ namespace _TYU.Scripts
             if (Instance == null)
                 Instance = this;
             _player = GetComponent<VideoPlayer>();
+            _player.renderMode = VideoRenderMode.CameraNearPlane;
+            _player.targetCamera = Camera.main;
         }
         private void OnDestroy()
         {
@@ -40,7 +42,6 @@ namespace _TYU.Scripts
 
         private void Update()
         {
-            if(Keyboard.current.gKey.wasPressedThisFrame) Win();
             
             if (_isOn && !_player.isPlaying)
                 SceneManager.LoadScene(0);

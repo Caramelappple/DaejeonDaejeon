@@ -1,4 +1,5 @@
-﻿using _TYU.Scripts.Player;
+﻿using _TYU.Scripts;
+using _TYU.Scripts.Player;
 using TMPro;
 using UnityEngine;
 
@@ -20,7 +21,12 @@ namespace _LSO._Scripts
     
         private void PlayWin(GameObject player)
         {
-            Debug.Log(player.GetComponentInParent<Player>().MyType.ToString());
+            foreach (var pl in players)
+            {
+                if(player.GetComponentInParent<Player>() != pl)
+                    Destroy(pl.gameObject);
+            }
+            WinHeaven.Instance.Win();
         }
 
 
