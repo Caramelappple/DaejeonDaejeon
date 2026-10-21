@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DevLib.ServiceLocator;
+using DevLib.SoundSystem.Runtime;
+using UnityEngine;
 
 namespace _TYU.Scripts.JeOngiJang
 {
@@ -10,6 +12,7 @@ namespace _TYU.Scripts.JeOngiJang
     [SerializeField] private int bufferSize = 5;
     [SerializeField] private RuntimeAnimatorController minus;
     [SerializeField] private RuntimeAnimatorController plus;
+    [SerializeField] private SoundClipSO clip;
     private Animator _anim;
     private float _electronicDistance;
     private int _gauge;
@@ -71,6 +74,8 @@ namespace _TYU.Scripts.JeOngiJang
         if (!_isReady) return;
         if (other.TryGetComponent(out Player.Player player))
         {
+            ServiceLocator.Get<IAudioService>()?.PlaySfx(clip);
+            
             if (player.ElectronicType == myType)
             {
                 player.Gauge.Up(_gauge);

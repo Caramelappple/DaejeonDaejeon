@@ -66,6 +66,7 @@ MonoBehaviour:
   bufferSize: 5
   minus: {fileID: 9100000, guid: 3cb2e576eda7bf4458d8f66092cd689e, type: 2}
   plus: {fileID: 9100000, guid: 16ea65499959eb84b91810dee0301766, type: 2}
+  clip: {fileID: 11400000, guid: acc128ccf548f974e979f7a8bbb208fd, type: 2}
 --- !u!135 &8327414724183438593
 SphereCollider:
   m_ObjectHideFlags: 0
