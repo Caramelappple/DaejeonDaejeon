@@ -15,6 +15,5 @@ MonoBehaviour:
   wallName: "\uC811\uC9C0 \uBCBD"
   description: "\uB2FF\uC73C\uBA74 \uAC8C\uC774\uC9C0\uAC00 \uBC29\uC804\uB418\uC5B4
     \uC904\uC5B4\uB4E6. \uB808\uC774\uC800 \uD761\uC218"
-  tintColor: {r: 0, g: 0, b: 0, a: 0}
   laserResponse: 2
-  dischargePerSecond: 0
+  absorbValuePerSecond: 3
