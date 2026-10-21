@@ -4575,7 +4575,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1558349407
@@ -10752,7 +10752,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7cd4386844ca7534ebbe5b9b1e3a6c24, type: 2}
   prefab: {fileID: 8158355040948761031, guid: cf8903ca6edceaf4096fef6df11dcaca, type: 3}
   firstSpawn: 5
-  reSpawn: 2
+  reSpawn: 3
   coolTime: 5
 --- !u!114 &3652496106732328637
 MonoBehaviour:

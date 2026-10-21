@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: SoundSystem_assembly::DevLib.SoundSystem.Runtime.SoundClipSO
   audioType: 1
   clip: {fileID: 8300000, guid: 667eef5602d055c458c19c22efb91318, type: 3}
-  isLoop: 0
+  isLoop: 1
   randomizePitch: 0
   randomPitchModifier: 0.1
   volume: 1
